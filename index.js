@@ -13,8 +13,10 @@ app.get('/', (req, res) => {
 
 // its time for routaroo!
 const check_for_errorsroute = require("./routes/errors");
+const params = require("./routes/params")
 
 app.use('/check-for-errors', check_for_errorsroute);
+app.use('/params', params);
 
 app.all('*', (req, res) => {
     res.status(404).render('404', { route: req.originalUrl });
