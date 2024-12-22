@@ -10,6 +10,10 @@ router.get('/id/:id', (req, res) => {
         return res.status(500).send("That is not a number.")
     };
 
+    if (!id) {
+        res.status(400).send("Please provide a parameter.")
+    }
+
     res.send("ID: " + id)
 });
 
